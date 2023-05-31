@@ -15,7 +15,7 @@ body {
 --------------------------------------------- */
 #parallax {
   perspective: 100px;
-  height: 800px;
+  height: 1000px;
   overflow-x: hidden;
   overflow-y: auto;
   background: linear-gradient(360deg, #F6EED8 50%, #9CD8D9 100%);
