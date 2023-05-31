@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="build/css/style.css">
+  <title>Laura and Dean</title>
+</head>
+
+<body>
+  <div id="parallax">
+    <div class="parallax layer0">
+      <header>
+        <span class="subhead">Please join us as we celebrate our marriage</span>
+        <h1>Laura <span class="and">&</span> Dean</h1>
+      </header>
+      <img src="assets/level6.svg" class="layer" />
+    </div>
+    <img class="parallax layer1" src="assets/level5.svg" alt="" />
+    <img class="parallax layer2" src="assets/level4.svg" alt="" />
+    <img class="parallax layer3" src="assets/level3.svg" alt="" />
+    <img class="parallax layer4" src="assets/level2.svg" alt="" />
+    <img class="parallax layer5" src="assets/level1.svg" alt="" />
+    <div class="parallax__cover">
+
+      <section class="invite">
+        <h3>Saturday</h3>
+        <h2>
+          <span class="month">Sept</span>
+          <span class="day">23</span>
+          <span class="year">2023</span>
+        </h2>
+
+        <h4>3 o'clock in the afternoon</h4>
+
+        <p onclick="openMap1()">
+        <strong>Episcopal Church of the Transfiguration </strong><br />
+        121 Brooks Camp Rd<br />
+        Sisters, Oregon
+        </p>
+
+        <p onclick="openMap2()">
+        <strong>Food, drink and friendship to follow at 4:30 p.m.</strong><br />
+        FivePine Lodge<br />
+        1021 E Desperado Trail<br />
+        Sisters, Oregon
+        </p>
+
+    <img src="assets/world.svg" class="footer-bg" />
+      </section>
+
+      <section class="insert">
+        <div class="insert-container">
+
+      <h2>Things to Consider</h2>
+
+
+    <hr>
+    <h3>Travelling</h3>
+      <p>Sisters, Oregon is a small, artsy town that is about thirty minutes from the well-known travel destination of Bend. Bend is home to the highest per capita concentration of microbreweries, epic hiking trails, horse trails, world-class mountain biking and skiing. Food trucks, art galleries and wineries abound as well.</p>
+
+      <p>The closest airport is Redmond (RDM), about 25 minutes away. Laura’s parents live in this town. </p>
+
+      <p>Larger airports include Portland (PDX), about three hours or Eugene (EUG), about two hours.</p>
+
+
+    <hr>
+    <h3>Lodging</h3>
+      <p>There are plenty of lodging options, from bougie to budget:</p>
+
+      <p>
+        <strong>Sisters, OR</strong>
+        <ul>
+          <li>On site: FivePine Lodge, please call 541-549-5900 and mention Moody/Kang</li>
+          <li>A mile away: Best Western Ponderosa, please call 800-528-1902 and mention Dean and Laura’s Wedding </li>
+        </ul>
+      </p>
+
+      <p>
+        <strong>Bend, OR (a thirty minute drive)</strong>
+        <ul>
+          <li>So many options! Check online or on AirBNB for some cool experiences.</li>
+        </ul>
+      </p>
+
+
+    <hr>
+    <h3>Attire</h3>
+    <p>The ceremony is in a church, so shirts and shoes are appreciated! But otherwise, wear what makes you comfortable.</p>
+    <hr>
+
+    <h3>Reception</h3>
+    <p>Our reception is an unstructured one. FivePine Lodge is about half a mile from the church, and we’ll head over as soon as the ceremony finishes. There’s plenty of parking and it’s also a beautiful walk. </p>
+    <p>Please come enjoy dinner, beer, wine, drinks alcoholic and non, and even a snazzy cake. Children of all ages are welcome throughout.</p>
+    <hr>
+    <h3>Gifts</h3>
+    <p>Forget what your mama taught you and please come empty handed. Really! No gifts, please.</p>
+    <p>We met two years ago in Bahrain while playing a small role in the care of thousands of abandoned dogs in the Middle East. If you like, please spread the love by donating to the grassroots team still on the ground:
+      <quote>
+Bahrain’s Happy Tails:           
+https://gofund.me/6471c1e8e
+Or your local Humane Society
+</quote>
+</p>
+        </div>
+
+<img src="assets/img-camels.jpg" class="camels">
+<img src="assets/img-fountain.jpg" class="fountain">
+<img src="assets/img-hike.jpg" class="hike">
+<img src="assets/img-jordan.jpg" class="jordan">
+<img src="assets/img-pyramids.jpg" class="pyramids">
+<img src="assets/img-rocky.jpg" class="rocky">
+<img src="assets/img-selfie.jpg" class="selfie">
+<img src="assets/img-shade.jpg" class="shade">
+<img src="assets/img-souk.jpg" class="souk">
+<img src="assets/img-yellowbrick.jpg" class="yellowbrick">
+
+
+
+      </section>
+
+      </div>
+
+<script src="scripts.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"></script>
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7bzHx2kmzbDm31QHpQ4EUBxPtJBHh7m0"></script>
+
+  <script>
+    function openMap1() {
+      var address = "121 Brooks Camp Rd, Sisters, Oregon";
+      var encodedAddress = encodeURIComponent(address);
+      var mapUrl = "https://www.google.com/maps/search/?api=1&query=" + encodedAddress;
+      var mapWindow = window.open(mapUrl, "_blank", "width=800,height=600");
+
+      mapWindow.addEventListener("load", function() {
+        var mapOptions = {
+          center: { lat: 44.295156, lng: -121.574965 },
+          zoom: 15
+        };
+
+        var map = new google.maps.Map(mapWindow.document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: { lat: 44.295156, lng: -121.574965 },
+          map: map,
+          title: "121 Brooks Camp Rd, Sisters, Oregon"
+        });
+      });
+    }  
+    
+    function openMap2() {
+      var address = "1021 E Desperado Trail, Sisters, Oregon";
+      var encodedAddress = encodeURIComponent(address);
+      var mapUrl = "https://www.google.com/maps/search/?api=1&query=" + encodedAddress;
+      var mapWindow = window.open(mapUrl, "_blank", "width=800,height=600");
+
+      mapWindow.addEventListener("load", function() {
+        var mapOptions = {
+          center: { lat: 44.288070, lng: -121.553646 },
+          zoom: 15
+        };
+
+        var map = new google.maps.Map(mapWindow.document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+          position: { lat: 44.288070, lng: -121.553646 },
+          map: map,
+          title: "FivePine Lodge"
+        });
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+           
