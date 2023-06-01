@@ -18,6 +18,9 @@ body {
 
   /* parallax section 
   --------------------------------------------- */
+.no-parallax {
+      display: none;
+}
 #parallax {
     perspective: 100px;
     height: 900px;
@@ -38,6 +41,7 @@ body {
   left: 0;
   right: 0;
   height: 2800px;
+  margin-top: -2px;
   z-index: 2;
 }
 $parallax__layers: 5;
@@ -48,6 +52,30 @@ $parallax__layers: 5;
     transform: translateZ(-100 * $x * 1px) scale($x + 1);
   }
 }
+
+  /* parallax section 
+  --------------------------------------------- */
+
+   @media only screen and (max-width: 768px) {
+      .parallax {
+          display: none;
+      }
+      .no-parallax {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: 100vw;
+      }
+      .no-parallax header {
+        margin-bottom: 50vh;
+      }
+      .no-parallax header .subhead {
+          width: 55vw;
+      }
+   }
+
+
+
 
 
   /* header section 
@@ -86,9 +114,15 @@ header .and {
     margin: -20px 5px 0px;
     display: inline-flex;
 }
+@media only screen and (max-width: 400px) {
 
-
-
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header .and { 
+    font-size: 3.5rem;
+  }
+}
 
   /* invite section 
   --------------------------------------------- */
@@ -167,7 +201,11 @@ header .and {
     padding-top: 5rem;
     opacity: 0.2;
 }
-
+@media only screen and (max-width: 768px) {
+  .invite p {
+    width: 70vw;
+  }
+}
 
 
   /* insert section 
@@ -201,6 +239,14 @@ header .and {
 .insert ul {
   padding-left: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .insert-container {
+    width: 80vw;
+    padding: 2.5rem;
+  }
+}
+
+
 
 .insert img  {  
   border: solid 1vmin #fefefe;
@@ -272,4 +318,9 @@ header .and {
     transform: rotate(5deg);
     top: 74%;
     right: 0%;
+}
+@media only screen and (max-width: 768px) {
+.insert img  {  
+    display: none;
+  }
 }

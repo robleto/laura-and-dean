@@ -13,6 +13,10 @@ body {
 
 /* parallax section 
 --------------------------------------------- */
+.no-parallax {
+  display: none;
+}
+
 #parallax {
   perspective: 100px;
   height: 900px;
@@ -35,6 +39,7 @@ body {
   left: 0;
   right: 0;
   height: 2800px;
+  margin-top: -2px;
   z-index: 2;
 }
 
@@ -62,6 +67,25 @@ body {
   transform: translateZ(0px) scale(1);
 }
 
+/* parallax section 
+--------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .parallax {
+    display: none;
+  }
+  .no-parallax {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+  }
+  .no-parallax header {
+    margin-bottom: 50vh;
+  }
+  .no-parallax header .subhead {
+    width: 55vw;
+  }
+}
 /* header section 
 --------------------------------------------- */
 header {
@@ -101,6 +125,14 @@ header .and {
   display: inline-flex;
 }
 
+@media only screen and (max-width: 400px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header .and {
+    font-size: 3.5rem;
+  }
+}
 /* invite section 
 --------------------------------------------- */
 .invite {
@@ -188,6 +220,11 @@ header .and {
   opacity: 0.2;
 }
 
+@media only screen and (max-width: 768px) {
+  .invite p {
+    width: 70vw;
+  }
+}
 /* insert section 
 --------------------------------------------- */
 .insert {
@@ -223,6 +260,12 @@ header .and {
   padding-left: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  .insert-container {
+    width: 80vw;
+    padding: 2.5rem;
+  }
+}
 .insert img {
   border: solid 1vmin #fefefe;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -299,4 +342,10 @@ header .and {
   transform: rotate(5deg);
   top: 74%;
   right: 0%;
+}
+
+@media only screen and (max-width: 768px) {
+  .insert img {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
