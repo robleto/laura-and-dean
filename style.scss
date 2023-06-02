@@ -40,7 +40,7 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  height: 2800px;
+  height: 3400px;
   margin-top: -2px;
   z-index: 2;
 }
@@ -213,7 +213,11 @@ header .and {
 
 .insert {
     position: relative;
-
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    z-index: 100;
 }
 
 .insert-container {
@@ -232,6 +236,7 @@ header .and {
 }
 .insert h2 {
     font-size: 2rem;
+    text-align: center;
 }
 .insert h3 {
     font-size: 1.4rem;
@@ -247,80 +252,100 @@ header .and {
 }
 
 
-
-.insert img  {  
+.photos {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-gap: 0px;
+}
+.side img  {  
   border: solid 1vmin #fefefe;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   display: block;
-  max-width: 25vw;
+  max-width: 30vw;
   height: auto;
-  position: absolute;
-}
-
-.camels {  
-  transform: rotate(-5deg);
-    top: 10%;
-    left: 0%;
-    z-index: 5;
-}
-.fountain {  
-    transform: rotate(5deg);
-    top: 32%;
-    left: 0%;
-    z-index: 8;
-}
-.hike {
-  transform: rotate(-5deg);
-    top: 44%;
-    left: 0%;
-    z-index: 7;
-}
-.jordan {  
-    transform: rotate(5deg);
-    top: 57%;
-    left: 0%;
-    z-index: 6;
-}
-.pyramids {
-  transform: rotate(-5deg);
-    top: 78%;
-    left: 0%;
-    z-index: 5;
+  justify-self: center;
 }
 
 
 
-.rocky {
-    transform: rotate(5deg);
-    top: 2%;
-    right: 0%;
-    z-index: 8;
+.side {
+  margin-top: 10rem;
+  margin-bottom: 20px;
+  z-index: 10;
+  transform: rotate(-10deg);
+    grid-row-start: 1;
+    grid-row-end: -1;
+}
+.side img:nth-child(2n) {
+   transform: rotate(10deg);
+}
+.left-side {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.right-side {
+    grid-column-start: -2;
+    grid-column-end: -1;
 }
 .selfie {
-    transform: rotate(-5deg);
-    top: 25%;
-    right: 0%;
-    z-index: 7;
-}
-.souk {
-    transform: rotate(5deg);
-    top: 38%;
-    right: 0%;
-    z-index: 6;
+  margin-left: 150px;
 }
 .shade {
-  transform: rotate(-5deg);
-    top: 61%;
-    right: 0%;
-    z-index: 8;
+  margin-left: 135px;
+}
+.hike {
+  transform: rotate(20deg);
+  margin-left: 95px;
+}
+.fountain {
+  margin-left: 40px;
+}
+.jordan {
+  margin-left: -50px;
 }
 .yellowbrick {
-    transform: rotate(5deg);
-    top: 74%;
-    right: 0%;
+  margin-left: -135px;
 }
+.rocky {
+  margin-left: -95px;
+}
+
+.mrburns {
+border-radius: 90%;
+width: 200px;
+text-align: center;
+margin: 0 auto 10px;
+display: block;
+}
+
+
+@media only screen and (max-width: 1128px) {
+
+
+ .insert-container {
+    margin: 2rem auto;
+    padding: 2.5rem 1.5rem;
+ }
+
+}
+
 @media only screen and (max-width: 768px) {
-.insert img  {  
+.photos img  {  
     display: none;
   }
+ .insert {
+    grid-column-start: 1;
+    grid-column-end: -1;
+ }
+ .insert-container {
+    margin: 2rem auto;
+    padding: 2.5rem 1.5rem;
+    width: 90vw;
+ }
+ .insert img.mrburns {
+  display: block;
+ }
 }
+
+
